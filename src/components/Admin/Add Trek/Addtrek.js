@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import ReactQuill from 'react-quill';
-
 import 'react-quill/dist/quill.snow.css';
 
 const modules = {
@@ -25,8 +24,6 @@ const Addtrek = () => {
   const [displayName, setdisplayName] = useState('');
   const [description, setDescription] = useState('');
   const [visibility, setVisibility] = useState('public');
-
-
   const [locations, setLocations] = useState('');
   const [fromDate, setFromDate] = useState('');
   const [toDate, setToDate] = useState('');
@@ -41,7 +38,8 @@ const Addtrek = () => {
   };
 
   const deleteRow = (index) => {
-   if (rows.length > 1){ const newRows = [...rows];
+   if (rows.length > 1){
+     const newRows = [...rows];
     newRows.splice(index, 1);
     setRows(newRows);}
   };
@@ -263,13 +261,11 @@ return(
             onChange={(event) => handleInputChange(event, rowIndex, 'date')}
           />
            <button type="button" onClick={addRow}
-  className="bg-blue-500 hover:bg-blue-700 text-white py-0.3 px-1.5 rounded-full mr-2"
-  >
+             className="bg-blue-500 hover:bg-blue-700 text-white py-0.3 px-1.5 rounded-full mr-2" >
         +
       </button>
       <button type="button" onClick={() => deleteRow(rowIndex)} 
-        className="bg-blue-500 hover:bg-blue-700 text-white py-0.2 px-1.5 rounded-full mr-2"
->
+        className="bg-blue-500 hover:bg-blue-700 text-white py-0.2 px-1.5 rounded-full mr-2">
             -
           </button>
         </div>
